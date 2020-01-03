@@ -30,14 +30,18 @@ export class PainelComponent implements OnInit {
   }
 
   public verificarResposta() : void {
-    console.log(this.tentativas)
+
     if(this.rodadaFrase.frasePtBr == this.resposta){
-      alert('A resposta está correta')
+      
       //trocar pergunta
     this.rodada++
     //progresso da barra
     this.progresso = this.progresso + (100 / this.frases.length)
-    console.log(this.progresso)
+
+    //
+    if(this.rodada ===4 ){
+      alert('Concluiu as traduções com sucesso')
+    }
    //atualiza o objeto rodada frase
    this.atualizaRodada()
     
@@ -48,7 +52,7 @@ export class PainelComponent implements OnInit {
       alert('Você perdeu todas as tentativas')
       }
     }
-    console.log(this.tentativas)
+
   }
 
   public atualizaRodada(): void {
